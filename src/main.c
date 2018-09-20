@@ -86,8 +86,8 @@ static NOINLINE int display_file_picker(char* outFilenameBuf, size_t* outFilesiz
     DIR dir;
     memset(&dir, 0, sizeof(dir));
 
-    FRESULT res = f_opendir(&dir, "/");
-    if (res == FR_OK) 
+    FRESULT res = f_opendir(&dir, "/bootloader");
+    if (res == FR_OK)
     {
         while (res == FR_OK)
         {
@@ -127,7 +127,7 @@ static NOINLINE int display_file_picker(char* outFilenameBuf, size_t* outFilesiz
                 if (lastFile == NULL)
                 {
                     files = alloca(sizeof(fileEntry_t));
-                    lastFile = files;           
+                    lastFile = files;
                 }
                 else
                 {
